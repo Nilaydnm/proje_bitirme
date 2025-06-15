@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - FuelVision AI</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body style="background-color: #12151c; color: #e0e0e0;">
+
+    <header class="shadow-sm sticky-top" style="background-color: #1a1d24; border-bottom: 2px solid #00e5ff;">
+        <div class="container-fluid px-4 py-2 d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
+                <img src="~/img/logo.jpg" alt="Logo" style="height: 40px;" class="me-2" />
+                <span class="h5 mb-0" style="color: #00e5ff; font-family: 'Orbitron', sans-serif;">FuelVision AI</span>
+            </div>
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" asp-controller="Home" asp-action="Index">
+                            <i class="fas fa-home me-1"></i> Anasayfa
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" asp-controller="Tahmin" asp-action="Form">
+                            <i class="fas fa-gas-pump me-1"></i> Yakıt Tahmini
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" asp-controller="Analiz" asp-action="Index">
+                            <i class="fas fa-chart-line me-1"></i> İstatistikler
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" asp-controller="Arac" asp-action="Index">
+                            <i class="fas fa-car-side me-1"></i> Araç Bilgileri
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="text-center text-muted small py-1 bg-secondary">
+            AI destekli yakıt tahminleriyle sürüş verimliliğinizi artırın 🚗⚡
+        </div>
+    </header>
+
+    <main role="main" class="pb-4">
+        @RenderBody()
+    </main>
+
+    <footer class="text-center text-muted py-3" style="background-color: #1a1d24;">
+        <small>© 2025 FuelVision AI - Tüm hakları saklıdır</small>
+    </footer>
+
+    @RenderSection("Scripts", required: false)
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

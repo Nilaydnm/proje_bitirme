@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Orbitron:wght@400;700&display=swap');
+
+:root {
+    --primary-bg: #12151c;
+    --section-bg: #1b1f28;
+    --accent-color: #00e5ff;
+    --accent-hover: #00c4db;
+    --text-color: #e0e0e0;
+    --text-muted: #a0a0a0;
+    --border-color: #3a3f4d;
+    --font-main: 'Roboto', sans-serif;
+    --font-display: 'Orbitron', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html, main {
+    font-family: var(--font-main);
+    background-color: var(--primary-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.container {
+    max-width: 100%;
+    width: 100%;
+    padding: 0 40px;
+    margin: 0 auto;
+}
+
+header {
+    background-color: var(--section-bg);
+    padding: 1rem 0;
+    border-bottom: 2px solid var(--accent-color);
+    box-shadow: 0 2px 10px rgba(0, 229, 255, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+#logo {
+    height: 50px;
+    margin-right: 15px;
+}
+
+header h1 {
+    font-family: var(--font-display);
+    color: var(--accent-color);
+    font-size: 1.8rem;
+}
+
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin-left: 20px;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: var(--accent-color);
+    color: var(--primary-bg);
+}
+
+section {
+    padding: 80px 0;
+    width: 100%;
+    margin: 0;
+}
+
+.hero {
+    background-color: var(--section-bg);
+    text-align: center;
+    width: 100%;
+}
+
+.hero h2 {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+}
+
+.cta-button {
+    background-color: var(--accent-color);
+    color: var(--primary-bg);
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: var(--accent-hover);
+}
+
+.features {
+    background-color: #171b23;
+    text-align: center;
+    width: 100%;
+}
+
+.features h3 {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    color: var(--accent-color);
+    margin-bottom: 2rem;
+}
+
+.feature-list {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 0 40px;
+}
+
+.feature-item {
+    background-color: var(--section-bg);
+    border-radius: 10px;
+    padding: 30px;
+    max-width: 320px;
+    flex: 1 1 300px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(0,229,255,0.2);
+}
+
+.feature-item i {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+}
+
+.feature-item h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.feature-item p {
+    font-size: 1rem;
+    color: var(--text-muted);
+}
+
+.about {
+    background-color: var(--section-bg);
+    text-align: center;
+    width: 100%;
+}
+
+.about h3 {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+}
+
+.about p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-color);
+}
+
+footer {
+    background-color: #14181e;
+    color: var(--text-muted);
+    text-align: center;
+    padding: 1rem;
+
+}

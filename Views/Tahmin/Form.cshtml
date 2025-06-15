@@ -1,0 +1,180 @@
+@model proje_bitirme.Models.AracVerisi
+
+<div class="container-fluid py-5 mt-4" style="background-color: #1b1f28;">
+    <div class="row justify-content-center align-items-start g-5">
+
+        <!-- Sol Panel -->
+        <div class="col-lg-4 d-flex flex-column justify-content-start mt-4">
+            <div class="info-box w-100 mb-4 mx-auto">
+                <h5><i class="fas fa-car-side me-2"></i> Tahmin Sistemi Hakkında</h5>
+                <p>
+                    Bu sistem, yapay zeka destekli analizlerle <strong>motor hacmi</strong>, <strong>şanzıman</strong>, <strong>yakıt türü</strong> gibi araç verilerinize göre
+                    tahmini yakıt tüketimini hesaplar.
+                </p>
+                <p class="info-muted">
+                    Girdiğiniz veriler yalnızca analiz amacıyla kullanılır ve sistemimizi daha doğru hale getirmek için anonimleştirilerek saklanır.
+                </p>
+            </div>
+
+            <div class="info-box w-100 mx-auto">
+                <h5><i class="fas fa-brain me-2"></i> AI Tahmin Süreci</h5>
+                <p>
+                    Tahmin motoru, geçmiş veri setlerini işleyerek <strong>istatistiksel öğrenme</strong> yöntemleriyle aracınızın yakıt tüketimini hesaplar.
+                </p>
+                <p class="info-muted">
+                    Model, sürekli olarak yeni verilerle eğitilerek kendini geliştirir.
+                </p>
+            </div>
+        </div>
+
+        <!-- Sağ Panel -->
+        <div class="col-md-8 col-lg-6 mt-3">
+            <div class="card bg-secondary text-light shadow border-0">
+                <div class="card-header text-center border-info border-bottom">
+                    <h4 class="mb-1"><i class="fas fa-gas-pump me-2"></i> Yakıt Tüketim Tahmini</h4>
+                    <small>Tahmini yakıt tüketimini hesaplamak için aşağıdaki alanları doldurun.</small>
+                </div>
+
+                <div class="card-body">
+                    <form asp-action="Sonuc" method="post">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label asp-for="MotorHacmi" class="form-label">Motor Hacmi (L)</label>
+                                <input asp-for="MotorHacmi" type="number" step="0.1" class="form-control" required />
+                            </div>
+
+                            <div class="col-md-6">
+                                <label asp-for="Yil" class="form-label">Model Yılı</label>
+                                <input asp-for="Yil" type="number" class="form-control" required />
+                            </div>
+
+                            <div class="col-md-6">
+                                <label asp-for="Silindir" class="form-label">Silindir Sayısı</label>
+                                <input asp-for="Silindir" type="number" class="form-control" required />
+                            </div>
+
+                            <div class="col-md-6">
+                                <label asp-for="Sanziman" class="form-label">Şanzıman</label>
+                                <select asp-for="Sanziman" class="form-select" required>
+                                    <option value="">Seçiniz</option>
+                                    <option value="AV7">AV7</option>
+                                    <option value="M6">M6</option>
+                                    <option value="AS10">AS10</option>
+                                    <option value="A8">A8</option>
+                                    <option value="A9">A9</option>
+                                    <option value="AM7">AM7</option>
+                                    <option value="AS8">AS8</option>
+                                    <option value="AM8">AM8</option>
+                                    <option value="AV">AV</option>
+                                    <option value="AS9">AS9</option>
+                                    <option value="A6">A6</option>
+                                    <option value="A10">A10</option>
+                                    <option value="M7">M7</option>
+                                    <option value="AV1">AV1</option>
+                                    <option value="AM6">AM6</option>
+                                    <option value="AS7">AS7</option>
+                                    <option value="AV8">AV8</option>
+                                    <option value="AV6">AV6</option>
+                                    <option value="AS6">AS6</option>
+                                    <option value="AV10">AV10</option>
+                                    <option value="M5">M5</option>
+                                    <option value="AS5">AS5</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label asp-for="YakitTuru" class="form-label">Yakıt Türü</label>
+                                <select asp-for="YakitTuru" class="form-select" required>
+                                    <option value="">Seçiniz</option>
+                                    <option value="Z">Benzin</option>
+                                    <option value="D">Dizel</option>
+                                    <option value="E">Elektrik</option>
+                                    <option value="X">Hibrit</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label asp-for="AracSinifi" class="form-label">Araç Sınıfı</label>
+                                <select asp-for="AracSinifi" class="form-select" required>
+                                    <option value="">Seçiniz</option>
+                                    <option value="Full-size">Full-size</option>
+                                    <option value="Sport utility vehicle: Small">SUV: Small</option>
+                                    <option value="Sport utility vehicle: Standard">SUV: Standard</option>
+                                    <option value="Mid-size">Mid-size</option>
+                                    <option value="Minicompact">Minicompact</option>
+                                    <option value="Two-seater">Two-seater</option>
+                                    <option value="Subcompact">Subcompact</option>
+                                    <option value="Compact">Compact</option>
+                                    <option value="Station wagon: Small">SW: Small</option>
+                                    <option value="Station wagon: Mid-size">SW: Mid-size</option>
+                                    <option value="Pickup truck: Small">Pickup: Small</option>
+                                    <option value="Pickup truck: Standard">Pickup: Standard</option>
+                                    <option value="Minivan">Minivan</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-12">
+                                <label asp-for="Emisyon" class="form-label"> Emisyon (L)</label>
+                                <input asp-for="Emisyon" type="number" step="0.1" class="form-control" required />
+                            </div>
+
+                            <div class="col-md-12 mt-3">
+                                <button type="submit" class="btn btn-info w-100">
+                                    <i class="fas fa-robot me-1"></i> Yakıt Tüketimini Hesapla
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Ek Açıklama -->
+            <div class="card mt-4 bg-dark text-light border-top border-info">
+                <div class="card-body">
+                    <h6><i class="fas fa-info-circle me-2"></i> Sistem Nasıl Çalışır?</h6>
+                    <p class="small mb-0">
+                        Girdiğiniz bilgiler yapay zeka destekli bir model tarafından analiz edilir.
+                        Sistem, geçmiş verilere dayanarak tahminler yapar ve her kullanımda daha doğru sonuçlar sunar.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .info-box {
+        background-color: #1f232c;
+        color: #e0e0e0;
+        border-radius: 10px;
+        padding: 25px;
+        transition: box-shadow 0.4s ease, transform 0.3s ease;
+        box-shadow: 0 0 0 transparent;
+    }
+
+    .info-box h5 {
+        color: #00e5ff;
+        font-family: 'Orbitron', sans-serif;
+        margin-bottom: 15px;
+    }
+
+    .info-box p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .info-box .info-muted {
+        color: #a0a0a0;
+        font-size: 0.9rem;
+        margin-top: 10px;
+    }
+
+    .info-box:hover {
+        box-shadow: 0 0 15px rgba(0, 229, 255, 0.4);
+        transform: translateY(-2px);
+    }
+
+    footer {
+        color: #bbbbbb !important; /* Daha görünür footer yazısı */
+        font-size: 0.95rem;
+    }
+</style>

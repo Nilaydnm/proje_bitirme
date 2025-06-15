@@ -1,0 +1,50 @@
+@model List<proje_bitirme.Models.AracVerisi>
+
+<div class="container-fluid mt-5 px-4">
+    <h2 class="text-info mb-4">
+        <i class="fas fa-car me-2"></i> Kayıtlı Araç Verileri
+    </h2>
+
+    <div class="table-responsive shadow">
+        <table class="table table-dark table-bordered table-hover align-middle">
+            <thead class="table-info text-dark">
+                <tr class="text-center">
+                    <th>Motor Hacmi (L)</th>
+                    <th>Model Yılı</th>
+                    <th>Silindir</th>
+                    <th>Şanzıman</th>
+                    <th>Yakıt Türü</th>
+                    <th>Araç Sınıfı</th>
+                    <th>Emisyon (g/km)</th>
+                    <th>Yakıt Tüketimi</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var a in Model)
+                {
+                    <tr class="text-center">
+                        <td>@a.MotorHacmi</td>
+                        <td>@a.Yil</td>
+                        <td>@a.Silindir</td>
+                        <td>@a.Sanziman</td>
+                        <td>
+                            <span class="badge bg-secondary px-2">@a.YakitTuru</span>
+                        </td>
+                        <td>@a.AracSinifi</td>
+                        <td>@a.Emisyon</td>
+                        <td>
+                            @if (a.TahminiTuketim != null && a.TahminiTuketim > 0 && !double.IsNaN(a.TahminiTuketim.Value) && !double.IsInfinity(a.TahminiTuketim.Value))
+                            {
+                                <span class="badge bg-success fs-6">@($"{a.TahminiTuketim:F2} L/100km")</span>
+                            }
+                            else
+                            {
+                                <span class="text-warning">Tahmin Yok</span>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
