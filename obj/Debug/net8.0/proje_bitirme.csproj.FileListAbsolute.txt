@@ -139,3 +139,4 @@ C:\Users\Cspr\OneDrive\Masaüstü\proje_bitirme\obj\Debug\net8.0\refint\proje_bi
 C:\Users\Cspr\OneDrive\Masaüstü\proje_bitirme\obj\Debug\net8.0\proje_bitirme.pdb
 C:\Users\Cspr\OneDrive\Masaüstü\proje_bitirme\obj\Debug\net8.0\proje_bitirme.genruntimeconfig.cache
 C:\Users\Cspr\OneDrive\Masaüstü\proje_bitirme\obj\Debug\net8.0\ref\proje_bitirme.dll
+C:\Users\Cspr\OneDrive\Masaüstü\proje_bitirme\obj\Debug\net8.0\proje_bitirme.sourcelink.json

@@ -1,31 +1,112 @@
-@model List<proje_bitirme.Models.MarkaAnalizViewModel>
-
+@model proje_bitirme.Models.MarkaAnalizViewModel
 @{
-    ViewData["Title"] = "Yakıt ve Emisyon Analizi";
+    ViewData["Title"] = "İstatistikler";
 }
 
-<div class="container my-5">
-    <h2 class="text-center mb-4 text-info">Araç Sınıfına Göre Yakıt ve Emisyon Analizi</h2>
+<div class="row text-light">
+    <div class="col-md-4 mb-4">
+        <div class="card bg-dark shadow-sm">
+            <div class="card-header text-info fw-bold text-center">
+                ⚙ Şanzıman Dağılımı
+            </div>
+            <div class="card-body p-2">
+                <canvas id="sanzimanChart" style="max-height: 200px;"></canvas>
+                <p class="text-muted small text-center mt-2">Farklı şanzıman türlerine göre araç sayısı</p>
+            </div>
+        </div>
+    </div>
 
-    <table class="table table-dark table-bordered table-hover shadow">
-        <thead class="table-info text-dark">
-            <tr>
-                <th>Araç Sınıfı</th>
-                <th>Ortalama Yakıt Tüketimi (L/100km)</th>
-                <th>Ortalama CO₂ Emisyonu (g/km)</th>
-                <th>Ortalama Motor Hacmi (L)</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>@item.AracSinifi</td>
-                    <td>@item.OrtalamaTuketim.ToString("0.00")</td>
-                    <td>@item.OrtalamaEmisyon.ToString("0")</td>
-                    <td>@item.OrtalamaMotorHacmi.ToString("0.0")</td>
-                </tr>
-            }
-        </tbody>
-    </table>
+    <div class="col-md-4 mb-4">
+        <div class="card bg-dark shadow-sm">
+            <div class="card-header text-danger fw-bold text-center">
+                ⛽ Yakıt Türü Dağılımı
+            </div>
+            <div class="card-body p-2">
+                <canvas id="yakitChart" style="max-height: 200px;"></canvas>
+                <p class="text-muted small text-center mt-2">Kayıtlı araçların yakıt türlerine göre oranı</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 mb-4">
+        <div class="card bg-dark shadow-sm">
+            <div class="card-header text-warning fw-bold text-center">
+                🚗 Araç Sınıfı Dağılımı
+            </div>
+            <div class="card-body p-2">
+                <canvas id="aracChart" style="max-height: 200px;"></canvas>
+                <p class="text-muted small text-center mt-2">Araç sınıflarının kategori bazlı görünümü</p>
+            </div>
+        </div>
+    </div>
 </div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const sanzimanChart = new Chart(document.getElementById('sanzimanChart'), {
+            type: 'bar',
+            data: {
+                labels: @Html.Raw(Json.Serialize(Model.SanzimanDagilimi.Keys)),
+                datasets: [{
+                    label: 'Araç Sayısı',
+                    data: @Html.Raw(Json.Serialize(Model.SanzimanDagilimi.Values)),
+                    backgroundColor: 'rgba(0, 123, 255, 0.7)'
+                }]
+            },
+            options: {
+                plugins: { legend: { display: false } },
+                scales: { y: { beginAtZero: true } },
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+        @{
+    var yakitOrijinal = Model.YakitTuruDagilimi.Keys.ToList();
+    var yakitEtiketleri = yakitOrijinal.Select(k =>
+        k switch
+        {
+            "Z" => "Benzin",
+            "D" => "Dizel",
+            "E" => "Elektrikli",
+            "X" => "Hibrit",
+            _ => k
+        }).ToList();
+}
+
+
+        const yakitChart = new Chart(document.getElementById('yakitChart'), {
+            type: 'pie',
+            data: {
+                labels: @Html.Raw(Json.Serialize(yakitEtiketleri)),
+                datasets: [{
+                    label: 'Yakıt Türü',
+                    data: @Html.Raw(Json.Serialize(Model.YakitTuruDagilimi.Values)),
+                    backgroundColor: ['#f94144', '#f3722c', '#f8961e', '#90be6d', '#577590']
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+
+        const aracChart = new Chart(document.getElementById('aracChart'), {
+            type: 'bar',
+            data: {
+                labels: @Html.Raw(Json.Serialize(Model.AracSinifiDagilimi.Keys)),
+                datasets: [{
+                    label: 'Araç Sınıfı',
+                    data: @Html.Raw(Json.Serialize(Model.AracSinifiDagilimi.Values)),
+                    backgroundColor: 'rgba(255, 206, 86, 0.7)'
+                }]
+            },
+            options: {
+                plugins: { legend: { display: false } },
+                scales: { y: { beginAtZero: true } },
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+    </script>
+}

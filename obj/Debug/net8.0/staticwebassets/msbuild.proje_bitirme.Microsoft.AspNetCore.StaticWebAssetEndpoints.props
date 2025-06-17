@@ -3,14 +3,14 @@
     <StaticWebAssetEndpoint Include="_content/proje_bitirme/css/site.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-1pg9Vp2/n7VlEQxMPRMEo4YQmb31ONDuc19A1\u002B8Dnew="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"4093"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u00221pg9Vp2/n7VlEQxMPRMEo4YQmb31ONDuc19A1\u002B8Dnew=\u0022"},{"Name":"Last-Modified","Value":"Thu, 12 Jun 2025 21:10:22 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-hhfHsP9\u002BygZ860CHI26QmH5kSImoPrJR/yM526qWdsg="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"4099"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022hhfHsP9\u002BygZ860CHI26QmH5kSImoPrJR/yM526qWdsg=\u0022"},{"Name":"Last-Modified","Value":"Tue, 17 Jun 2025 15:58:45 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/proje_bitirme/css/site.u6y39gyfkw.css">
+    <StaticWebAssetEndpoint Include="_content/proje_bitirme/css/site.uuzg62jbt5.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"u6y39gyfkw"},{"Name":"integrity","Value":"sha256-1pg9Vp2/n7VlEQxMPRMEo4YQmb31ONDuc19A1\u002B8Dnew="},{"Name":"label","Value":"_content/proje_bitirme/css/site.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"4093"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u00221pg9Vp2/n7VlEQxMPRMEo4YQmb31ONDuc19A1\u002B8Dnew=\u0022"},{"Name":"Last-Modified","Value":"Thu, 12 Jun 2025 21:10:22 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"uuzg62jbt5"},{"Name":"integrity","Value":"sha256-hhfHsP9\u002BygZ860CHI26QmH5kSImoPrJR/yM526qWdsg="},{"Name":"label","Value":"_content/proje_bitirme/css/site.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"4099"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022hhfHsP9\u002BygZ860CHI26QmH5kSImoPrJR/yM526qWdsg=\u0022"},{"Name":"Last-Modified","Value":"Tue, 17 Jun 2025 15:58:45 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/proje_bitirme/favicon.61n19gt1b8.ico">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\favicon.ico'))</AssetFile>
@@ -36,17 +36,17 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-rJgGKu8cMXc4xAXuNGICiOVbgw\u002BeD7/xJms3auabNZs="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"67405"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022rJgGKu8cMXc4xAXuNGICiOVbgw\u002BeD7/xJms3auabNZs=\u0022"},{"Name":"Last-Modified","Value":"Thu, 12 Jun 2025 21:13:26 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/proje_bitirme/js/site.f1aj5txoer.js">
+    <StaticWebAssetEndpoint Include="_content/proje_bitirme/js/site.3i7turk9kh.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\site.js'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"f1aj5txoer"},{"Name":"integrity","Value":"sha256-k4LTlLGjCO0D734zu2y5HmAqArJAApb8yLP5gsiyjnI="},{"Name":"label","Value":"_content/proje_bitirme/js/site.js"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"4926"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022k4LTlLGjCO0D734zu2y5HmAqArJAApb8yLP5gsiyjnI=\u0022"},{"Name":"Last-Modified","Value":"Thu, 12 Jun 2025 08:00:13 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"3i7turk9kh"},{"Name":"integrity","Value":"sha256-O3VK\u002BrDSmKkpQMoVEcYUeD2kaNd/fwDwRTqI/7NggE4="},{"Name":"label","Value":"_content/proje_bitirme/js/site.js"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"4928"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022O3VK\u002BrDSmKkpQMoVEcYUeD2kaNd/fwDwRTqI/7NggE4=\u0022"},{"Name":"Last-Modified","Value":"Tue, 17 Jun 2025 16:47:44 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/proje_bitirme/js/site.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\site.js'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-k4LTlLGjCO0D734zu2y5HmAqArJAApb8yLP5gsiyjnI="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"4926"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022k4LTlLGjCO0D734zu2y5HmAqArJAApb8yLP5gsiyjnI=\u0022"},{"Name":"Last-Modified","Value":"Thu, 12 Jun 2025 08:00:13 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-O3VK\u002BrDSmKkpQMoVEcYUeD2kaNd/fwDwRTqI/7NggE4="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"4928"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022O3VK\u002BrDSmKkpQMoVEcYUeD2kaNd/fwDwRTqI/7NggE4=\u0022"},{"Name":"Last-Modified","Value":"Tue, 17 Jun 2025 16:47:44 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/proje_bitirme/lib/bootstrap/dist/css/bootstrap-grid.agp80tu62r.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\lib\bootstrap\dist\css\bootstrap-grid.css'))</AssetFile>
